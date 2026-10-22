@@ -1,3 +1,4 @@
+
 export type EstadoEquipo = 'disponible' | 'prestado' | 'mantenimiento' | 'baja';
 
 export interface CreateEquipmentDto {
@@ -6,5 +7,3 @@ export interface CreateEquipmentDto {
   estado: EstadoEquipo;
   ambienteId: string;
 }
-
-export type UpdateEquipmentDto = Partial<CreateEquipmentDto>;

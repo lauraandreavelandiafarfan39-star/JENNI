@@ -1,5 +1,5 @@
+
 export type RolUsuario = 'estudiante' | 'docente' | 'administrador';
-export type EstadoCuenta = 'activo' | 'inactivo' | 'bloqueado';
 
 export interface CreateUserDto {
   nombre: string;
@@ -8,9 +8,3 @@ export interface CreateUserDto {
   rol: RolUsuario;
   contrasena: string;
 }
-
-export interface UpdateUserDto {
-  rol?: RolUsuario;
-  estadoCuenta?: EstadoCuenta;
-  contrasena?: string;
-} 
