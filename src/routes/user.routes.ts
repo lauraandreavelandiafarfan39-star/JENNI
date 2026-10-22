@@ -1,14 +1,14 @@
+// src/routes/user.routes.ts
 import { Router } from 'express';
 import { UserController } from '../controllers/user.controller';
+import { validateCreateUser, validateUpdateUser } from '../middlewares/validateUser.middleware';
 
 const router = Router();
 
-//definicion de las rutas del modulo
-
 router.get('/', UserController.getUsers);
-router.post('/', UserController.createUser);
+router.post('/', validateCreateUser, UserController.createUser);
 router.get('/:id', UserController.getUserById);
-router.patch('/:id', UserController.updateUser);
+router.patch('/:id', validateUpdateUser, UserController.updateUser);
 router.delete('/:id', UserController.deleteUser);
 
 export default router;
