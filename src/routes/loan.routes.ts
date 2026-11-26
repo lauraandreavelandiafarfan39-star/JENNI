@@ -1,15 +1,13 @@
 import { Router } from 'express';
 import { LoanController } from '../controllers/loan.controller';
-import { validateLoanPayload }from 
-'../middlewares/validateLoan.middleware'; 
+import { validateLoanPayload } from '../middlewares/validateLoan.middleware';
 
 const router = Router();
 
-//definicion de las rutas del modulo 
-
-router.post('/',validateLoanPayload, LoanController.createLoan);
+router.post('/', validateLoanPayload, LoanController.createLoan);
 router.get('/search', LoanController.getLoansByFilter);
+router.get('/stats', LoanController.getLoanStats);
 router.get('/:id', LoanController.getLoanById);
 router.put('/:id/accept', LoanController.acceptLoanInventory);
 
-export default router; 
+export default router;
